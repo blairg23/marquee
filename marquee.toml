@@ -1,0 +1,18 @@
+# Marquee config. Every path is configurable; nothing is hardcoded in src/.
+
+[paths]
+# Where decks, venues and assets live. Relative paths resolve from the repo root.
+# Point this anywhere (another drive, a synced folder, a shared team location).
+data_dir = "./data"
+
+# Generated output. Deliberately outside the repo so it never syncs and never
+# ends up in git.
+runs_dir = "~/.local/state/marquee/runs"
+
+[art.comfyui]
+# The entire integration surface with ComfyUI. Marquee must never know its
+# filesystem path.
+url = "http://127.0.0.1:8188"
+
+[export]
+default_ratio = "4:5"

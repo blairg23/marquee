@@ -1,0 +1,14 @@
+# --- data/ ---
+# data/decks/ IS committed. Those are the shipped defaults that make a fresh
+# install work, and they define tool behavior.
+# Everything else under data/ is user data: yours, not the tool's.
+data/venues/
+data/assets/
+
+# generated output lives outside the repo entirely, see marquee.toml
+runs/
+
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
