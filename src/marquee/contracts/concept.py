@@ -1,4 +1,9 @@
-"""Director output contract -- one line per concept in concepts.jsonl."""
+"""Director output contract -- one line per concept in concepts.jsonl.
+
+Field names match the Director skill's output vocabulary exactly
+(.claude/skills/director/SKILL.md) so a concept the skill emits validates
+without translation.
+"""
 
 from __future__ import annotations
 
@@ -14,10 +19,10 @@ class ConstraintTuple(BaseModel):
 
 
 class Concept(BaseModel):
+    constraints: ConstraintTuple
     idea: str
-    light_logic: str
+    light: str
     material: str
     type_philosophy: str
-    palette_logic: str
-    distinguisher: str
-    constraint_tuple: ConstraintTuple
+    color_logic: str
+    not_a_flyer: str

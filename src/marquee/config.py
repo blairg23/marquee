@@ -28,11 +28,15 @@ class ComfyUIConfig(BaseModel):
     url: str = "http://127.0.0.1:8188"
 
 
+class ArtConfig(BaseModel):
+    comfyui: ComfyUIConfig = Field(default_factory=ComfyUIConfig)
+
+
 class Config(BaseModel):
     """Resolved marquee configuration, with paths made absolute."""
 
     paths: PathsConfig = Field(default_factory=PathsConfig)
-    comfyui: ComfyUIConfig = Field(default_factory=ComfyUIConfig)
+    art: ArtConfig = Field(default_factory=ArtConfig)
 
     _config_dir: Path = PrivateAttr(default_factory=Path.cwd)
 

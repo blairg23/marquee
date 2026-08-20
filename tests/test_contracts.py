@@ -28,12 +28,12 @@ def test_brief_requires_venue() -> None:
 def test_concept_round_trip() -> None:
     concept = Concept(
         idea="neon crescent over a wet street",
-        light_logic="single hard source",
+        light="single hard source",
         material="chrome",
         type_philosophy="type as structure",
-        palette_logic="monochrome + one accent",
-        distinguisher="the crescent doubles as the headline underline",
-        constraint_tuple=ConstraintTuple(
+        color_logic="monochrome + one accent",
+        not_a_flyer="the crescent doubles as the headline underline",
+        constraints=ConstraintTuple(
             composition="diagonal cascade",
             light="single hard source",
             material="chrome",
@@ -41,7 +41,7 @@ def test_concept_round_trip() -> None:
             color_logic="monochrome + one accent",
         ),
     )
-    assert concept.model_dump()["constraint_tuple"]["material"] == "chrome"
+    assert concept.model_dump()["constraints"]["material"] == "chrome"
 
 
 def test_layout_requires_canvas_and_art() -> None:
@@ -61,8 +61,11 @@ def test_critique_may_be_empty() -> None:
 
 def test_critique_finding_shape() -> None:
     finding = CritiqueFinding(
-        finding="logo has been recolored",
-        layout_path="layers[2].opacity",
-        proposed_patch="set opacity to 1.0",
+        severity="blocker",
+        check="logo_integrity",
+        observed="logo has been recolored",
+        path="layers[2].opacity",
+        patch=1.0,
     )
-    assert finding.layout_path == "layers[2].opacity"
+    assert finding.path == "layers[2].opacity"
+    assert finding.patch == 1.0

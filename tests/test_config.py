@@ -45,3 +45,12 @@ def test_find_config_file_walks_up(tmp_path: Path) -> None:
 
 def test_find_config_file_returns_none_when_absent(tmp_path: Path) -> None:
     assert find_config_file(tmp_path) is None
+
+
+def test_load_config_reads_comfyui_url(tmp_path: Path) -> None:
+    config_path = tmp_path / "marquee.toml"
+    config_path.write_text(
+        '[art.comfyui]\nurl = "http://example.invalid:9000"\n', encoding="utf-8"
+    )
+    config = load_config(config_path)
+    assert config.art.comfyui.url == "http://example.invalid:9000"
