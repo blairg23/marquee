@@ -7,14 +7,14 @@ from marquee.contracts.layout import ArtBlock, Layout, PaletteToken, TypeRole
 from marquee.contracts.venue import Venue
 
 __all__ = [
+    "ArtBlock",
     "Brief",
-    "LineupEntry",
     "Concept",
     "Critique",
     "CritiqueFinding",
     "Layout",
+    "LineupEntry",
     "PaletteToken",
     "TypeRole",
-    "ArtBlock",
     "Venue",
 ]
