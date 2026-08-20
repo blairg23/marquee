@@ -1,9 +1,12 @@
 # --- data/ ---
-# data/decks/ IS committed. Those are the shipped defaults that make a fresh
-# install work, and they define tool behavior.
-# Everything else under data/ is user data: yours, not the tool's.
-data/venues/
+# Everything under data/ is user-specific: decks, venues, whatever you draw
+# from at runtime. None of it is committed except the *.example.* files,
+# which are starter content -- copy one to its real filename and edit it.
+data/decks/*
+data/venues/*
 data/assets/
+!data/decks/*.example.*
+!data/venues/*.example.*
 
 # generated output lives outside the repo entirely, see marquee.toml
 runs/
