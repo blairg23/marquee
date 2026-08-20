@@ -1,0 +1,22 @@
+# --- data/ ---
+# Everything under data/ is user-specific: decks, venues, whatever you draw
+# from at runtime. None of it is committed except the *.example.* files,
+# which are starter content -- copy one to its real filename and edit it.
+data/decks/*
+data/venues/*
+data/assets/
+!data/decks/*.example.*
+!data/venues/*.example.*
+
+# generated output lives outside the repo entirely, see marquee.toml
+runs/
+
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+.tox/
+htmlcov/
+coverage.xml
+.coverage*
