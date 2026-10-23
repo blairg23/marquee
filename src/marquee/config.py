@@ -11,10 +11,7 @@ from pathlib import Path
 
 from pydantic import BaseModel, Field, PrivateAttr
 
-if sys.version_info >= (3, 11):
-    import tomllib
-else:  # pragma: no cover
-    import tomli as tomllib  # type: ignore[import-not-found, no-redef]
+import tomllib
 
 DEFAULT_CONFIG_FILENAME = "marquee.toml"
 
