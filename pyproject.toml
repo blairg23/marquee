@@ -1,0 +1,40 @@
+[build-system]
+requires = ["poetry-core>=1.9.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+name = "marquee"
+version = "0.1.0"
+description = "Stateless, agent-driven asset generator for event posters and related recipes"
+readme = "README.md"
+authors = ["blairg23"]
+packages = [{ include = "marquee", from = "src" }]
+
+[tool.poetry.dependencies]
+python = ">=3.11,<4.0"
+typer = "^0.15.0"
+pydantic = "^2.9.0"
+tomli = { version = "^2.0.0", python = "<3.11" }
+pillow = "^11.0.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.0.0"
+black = "^24.0.0"
+ruff = "^0.15.0"
+mypy = "^1.10.0"
+
+[tool.poetry.scripts]
+marquee = "marquee.cli:app"
+
+[tool.black]
+line-length = 88
+
+[tool.ruff]
+line-length = 88
+
+[tool.mypy]
+python_version = "3.11"
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

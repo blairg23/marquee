@@ -1,0 +1,14 @@
+{
+  "id": "example-venue",
+  "name": "Example Venue",
+  "datacenter": "Aether",
+  "world": "Example World",
+  "location": "Ward 1, Plot 1",
+  "carrd": "example-venue.carrd.co",
+  "discord": "TODO",
+  "logo": "assets/example-venue/logo.png",
+  "logo_lock": true,
+  "regular_night": "Friday",
+  "brand_notes": "Describe the venue's fixed visual identity here: the logo, any elements that must never be redrawn or recolored, and the recurring event's tone.",
+  "safe_margin_pct": 5.0
+}
