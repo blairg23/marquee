@@ -6,12 +6,10 @@ locations goes through the resolved Config returned here.
 
 from __future__ import annotations
 
-import sys
+import tomllib
 from pathlib import Path
 
 from pydantic import BaseModel, Field, PrivateAttr
-
-import tomllib
 
 DEFAULT_CONFIG_FILENAME = "marquee.toml"
 
